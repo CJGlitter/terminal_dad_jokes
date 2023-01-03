@@ -25,7 +25,7 @@ def another_joke
   puts
   answer = gets.chomp
   puts "\n\n\n"
-  if answer == 'y'
+  if answer == 'y' || answer == 'yes'
     sleep(1)
     joke_get
     sleep(4)

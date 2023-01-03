@@ -9,13 +9,13 @@ end
 def opening
   puts "\n\n\n"
   type_effect('So ya wanna hear a joke?')
-  sleep(3)
+  sleep(1.5)
   puts "\n\n\n"
   type_effect('Here goes!')
-  sleep(3)
+  sleep(1.5)
   puts "\n\n"
   joke_get
-  sleep(4)
+  sleep(2.5)
   puts "\n\n\n"
   another_joke
 end
@@ -23,12 +23,12 @@ end
 def another_joke
   type_effect('Do you want to hear another? [y/n]')
   puts
-  answer = gets.chomp
+  answer = gets.chomp.downcase
   puts "\n\n\n"
   if answer == 'y' || answer == 'yes'
     sleep(1)
     joke_get
-    sleep(4)
+    sleep(2)
     puts "\n\n\n"
     another_joke
   else

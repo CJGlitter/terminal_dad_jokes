@@ -5,7 +5,7 @@ terminal_dad_jokes does one thing: supplies you with a never-ending stream of Da
 ## Installation
 
 1. Clone or fork this repo to your local machine
-1. Run `bundle install` in the home directory
+1. Run `bundle install` in the app directory
 1. Then call the script! `ruby dad.rb`
 
 Optional:

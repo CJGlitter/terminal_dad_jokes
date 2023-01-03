@@ -1,17 +1,18 @@
 require 'net/http'
+require 'typewrite'
 
 def joke_get
   uri = URI('https://icanhazdadjoke.com/')
   request = Net::HTTP.get(uri, { 'Accept' => 'text/plain' })
-  type_effect(request)
+  Typewrite.write(request)
 end
 
 def opening
   puts "\n\n\n"
-  type_effect('So ya wanna hear a joke?')
+  Typewrite.write('So ya wanna hear a joke?', 0.1, 1, false)
   sleep(3)
   puts "\n\n\n"
-  type_effect('Here goes!')
+  Typewrite.write('Here goes!', 0.1, 1, false)
   sleep(3)
   puts "\n\n"
   joke_get
@@ -21,7 +22,7 @@ def opening
 end
 
 def another_joke
-  type_effect('Do you want to hear another? [y/n]')
+  Typewrite.write('Do you want to hear another? [y/n]', 0.1, 0)
   puts
   answer = gets.chomp
   puts "\n\n\n"
@@ -34,15 +35,6 @@ def another_joke
   else
     puts "\n\n"
     abort "Thanks for the laughs!\n\n"
-  end
-end
-
-def type_effect(message)
-  message_array = message.split('')
-  message_array.each do |char|
-    print char
-    sleep(1.5) if char == '?' unless message_array.include?('[')
-    sleep(0.1)
   end
 end
 

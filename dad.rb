@@ -14,9 +14,10 @@ def opening
   puts "\n\n\n"
   Typewrite.write('Here goes!', 0.1, 1, false)
   sleep(3)
+
   puts "\n\n"
   joke_get
-  sleep(4)
+  sleep(3)
   puts "\n\n\n"
   another_joke
 end
@@ -24,12 +25,12 @@ end
 def another_joke
   Typewrite.write('Do you want to hear another? [y/n]', 0.1, 0, false)
   puts
-  answer = gets.chomp
+  answer = gets.chomp.downcase
   puts "\n\n\n"
   if answer == 'y' || answer == 'yes'
     sleep(1)
     joke_get
-    sleep(4)
+    sleep(2)
     puts "\n\n\n"
     another_joke
   else

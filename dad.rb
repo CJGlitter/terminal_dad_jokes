@@ -22,7 +22,7 @@ def opening
 end
 
 def another_joke
-  Typewrite.write('Do you want to hear another? [y/n]', 0.1, 0)
+  Typewrite.write('Do you want to hear another? [y/n]', 0.1, 0, false)
   puts
   answer = gets.chomp
   puts "\n\n\n"
